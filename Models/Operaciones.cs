@@ -18,18 +18,5 @@ namespace Calculadora_Web_Ejercicio_4.Models
 
         public double Resultado { get; set; }
 
-        public Operacion TipoDeOperacion { get; set; }
-
-        public enum Operacion
-        {
-            SUMA,
-            RESTA,
-            MULTIPLICACION,
-            DIVICION,
-            POTTENCIA,
-            RAIZ
-        }
-
-
     }
 }

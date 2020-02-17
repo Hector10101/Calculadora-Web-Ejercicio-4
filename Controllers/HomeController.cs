@@ -37,7 +37,6 @@ namespace Calculadora_Web_Ejercicio_4.Controllers
         [HttpPost]
         public IActionResult Index(Operaciones operaciones, string Funtion)
         {
-           
             float Total = 0;
             float V1 = Convert.ToSingle(operaciones.Valor1.ToString());
             float V2 = Convert.ToSingle(operaciones.Valor2.ToString());            
@@ -62,8 +61,6 @@ namespace Calculadora_Web_Ejercicio_4.Controllers
                 default:
                     Total = 0;
                     break;
-
-
             }
             ViewData["Resultado"] = Total;
             return View();

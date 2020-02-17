@@ -1,0 +1,42 @@
+﻿@model Operaciones
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Calculadora Web</h1>
+    <p>Operaciones Trigonometrica</p>
+</div>
+
+<div class="form-group row">
+    <div class="col-md-5">
+        <form method="post">
+
+            <div class="form-group">
+                <label asp-for="Valor1" class="control-label">Primer Valor</label>
+                <input asp-for="Valor1" class="form-control" required />
+                <span asp-validation-for="Valor1" class="text-danger"></span>
+            </div>
+            
+            <div class="col-5">
+                <input type="radio" value="sen" name="Funtion" required /><label class="font-weight-bold"> Seno</label><br />
+                <input type="radio" value="cos" name="Funtion" required /><label class="font-weight-bold"> Coseno</label><br />
+                <input type="radio" value="tan" name="Funtion" required /><label class="font-weight-bold"> Tangente</label><br />
+                <input type="radio" value="cot" name="Funtion" required /><label class="font-weight-bold"> Cotangente</label><br />
+                <input type="radio" value="sec" name="Funtion" required /><label class="font-weight-bold"> Secante</label><br />
+                <input type="radio" value="csc" name="Funtion" required /><label class="font-weight-bold"> Cosecante</label><br />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Calcular</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5 ">
+
+        <h5 class="alert-primary">El Resultado es: @ViewData["Resultado"]</h5>
+        <hr />
+    </div>
+</div>

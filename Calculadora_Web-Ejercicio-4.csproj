@@ -5,6 +5,10 @@
     <RootNamespace>Calculadora_Web_Ejercicio_4</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
 
 
 </Project>
