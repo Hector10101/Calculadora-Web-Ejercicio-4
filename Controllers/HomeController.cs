@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Calculadora_Web_Ejercicio_4.Models;
+using static Calculadora_Web_Ejercicio_4.Models.Operaciones;
 
 namespace Calculadora_Web_Ejercicio_4.Controllers
 {
@@ -25,6 +26,46 @@ namespace Calculadora_Web_Ejercicio_4.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult Operaciones()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Operaciones operaciones, string Funtion)
+        {
+           
+            float Total = 0;
+            float V1 = Convert.ToSingle(operaciones.Valor1.ToString());
+            float V2 = Convert.ToSingle(operaciones.Valor2.ToString());            
+
+            switch (Funtion) {
+                case "+":
+                    Total = V1 + V2;
+                    break;
+
+                case "-":
+                    Total = V1 - V2;
+                    break;
+
+                case "*":
+                    Total = V1 * V2;
+                    break;
+
+                case "/":
+                    Total = V1 / V2;
+                    break;
+
+                default:
+                    Total = 0;
+                    break;
+
+
+            }
+            ViewData["Resultado"] = Total;
             return View();
         }
 
